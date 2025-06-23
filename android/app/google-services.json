@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "540191834935",
+    "project_id": "clitest-a5fb0",
+    "storage_bucket": "clitest-a5fb0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540191834935:android:e4d1cc2b50f047b13250b2",
+        "android_client_info": {
+          "package_name": "com.example.music_room"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe0EmM3xQ5hPYKOrUc1VqLj1C603WqQ0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
