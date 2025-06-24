@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:music_room/presentation/HomePage/home_screen.dart';
+import 'package:music_room/presentation/auth/sign_up_screen.dart';
 
 class SplashScreen extends StatefulWidget {
     const SplashScreen({super.key});
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => RoomScreen()),
+        MaterialPageRoute(builder: (_) => SignUpScreen()),
       );
     });
   }
