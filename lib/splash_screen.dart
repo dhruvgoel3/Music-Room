@@ -3,23 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:music_room/presentation/HomePage/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+    const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  // void initState() {
-  //   super.initState();
-  //
-  //   Future.delayed(Duration(seconds: 3), () {
-  //     Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(builder: (_) => RoomScreen()),
-  //     );
-  //   });
-  // }
+  void initState() {
+
+    super.initState();
+
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => RoomScreen()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +31,15 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Center(
             child: Padding(
-              padding:  EdgeInsets.only(bottom: 50),
+              padding: EdgeInsets.only(bottom: 50, right: 10),
               child: CircleAvatar(
                 radius: 150,
                 backgroundColor: Colors.black,
-                child: Icon(CupertinoIcons.double_music_note, color: Colors.green,size: 150,),
+                child: Icon(
+                  CupertinoIcons.double_music_note,
+                  color: Colors.green,
+                  size: 150,
+                ),
               ),
             ),
           ),
