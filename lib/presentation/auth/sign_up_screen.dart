@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:music_room/presentation/HomePage/home_screen.dart';
 import 'package:music_room/presentation/auth/login_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -33,37 +34,107 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Signup')),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            TextField(
-              controller: emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
-            ),
-            TextField(
-              controller: passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => Get.to(() => RoomScreen()),
-              child: const Text('Sign Up'),
-            ),
-            Row(
-              children: [
-                Text("Already have and account ?"),
-                TextButton(
-                  onPressed: () {
-                    Get.to(() => LoginScreen());
-                  },
-                  child: Text("Login"),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 25),
+          child: Column(
+            children: [
+              Image.asset("assets/music.jpg", height: 230),
+              Text(
+                "Register Here to listen\n        non stop music",
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
-          ],
+              ),
+              SizedBox(height: 50),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.green.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Email",
+                    hintStyle: GoogleFonts.poppins(
+                      color: Colors.black,
+                      fontSize: 14,
+                    ),
+                    prefixIcon: Icon(Icons.email_outlined, color: Colors.black),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.green.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: TextField(
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Password",
+                    hintStyle: GoogleFonts.poppins(
+                      color: Colors.black,
+                      fontSize: 14,
+                    ),
+                    prefixIcon: Icon(Icons.password, color: Colors.black),
+                  ),
+                  obscureText: false,
+                ),
+              ),
+              SizedBox(height: 20),
+              InkWell(
+                onTap: () {
+                  Get.to(() => RoomScreen());
+                },
+                child: Container(
+                  width: 335,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "SignUp",
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 35, top: 5),
+                child: Row(
+                  children: [
+                    Text(
+                      "Already have and account ?",
+                      style: GoogleFonts.poppins(color: Colors.black),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Get.to(() => LoginScreen());
+                      },
+                      child: Text(
+                        "Login",
+                        style: GoogleFonts.poppins(color: Colors.green),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
