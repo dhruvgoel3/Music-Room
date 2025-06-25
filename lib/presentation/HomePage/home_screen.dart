@@ -106,17 +106,15 @@ class _RoomScreenState extends State<RoomScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Center(
-          child: Text(
-            'Create / Join a Music Room',
-            style: GoogleFonts.poppins(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
-            ),
+        backgroundColor: Colors.white,
+        title: Text(
+          'Create / Join a Music Room',
+          style: GoogleFonts.poppins(
+            fontSize: 18,
+            fontWeight: FontWeight.w800,
+            color: Colors.black,
           ),
         ),
       ),
@@ -125,24 +123,16 @@ class _RoomScreenState extends State<RoomScreen> {
           children: [
             Column(
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: 30),
+                Image.asset("assets/music.jpg", height: 240),
 
-                CircleAvatar(
-                  radius: 80,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    CupertinoIcons.music_note_list,
-                    color: Colors.green,
-                    size: 70,
-                  ),
-                ),
-                SizedBox(height: 50),
+                SizedBox(height: 20),
                 Text(
                   "Enter a existing code to join a Room",
                   style: GoogleFonts.poppins(
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    color: Colors.green,
+                    color: Colors.black,
                   ),
                 ),
                 Text(
@@ -150,7 +140,7 @@ class _RoomScreenState extends State<RoomScreen> {
                   style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white,
+                    color: Colors.green,
                   ),
                 ),
 
@@ -159,7 +149,7 @@ class _RoomScreenState extends State<RoomScreen> {
                   style: GoogleFonts.poppins(
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    color: Colors.green,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(height: 50),
@@ -167,7 +157,7 @@ class _RoomScreenState extends State<RoomScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.green.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: TextField(
@@ -195,7 +185,10 @@ class _RoomScreenState extends State<RoomScreen> {
                     ),
                   ),
                   onPressed: () => createRoom(context),
-                  child: Text("Create Room"),
+                  child: Text(
+                    "Create Room",
+                    style: GoogleFonts.poppins(color: Colors.white),
+                  ),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -206,7 +199,10 @@ class _RoomScreenState extends State<RoomScreen> {
                     ),
                   ),
                   onPressed: () => joinRoom(context),
-                  child: Text("Join Room"),
+                  child: Text(
+                    "Join Room",
+                    style: GoogleFonts.poppins(color: Colors.white),
+                  ),
                 ),
               ],
             ),
